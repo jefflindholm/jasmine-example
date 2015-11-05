@@ -1,14 +1,17 @@
-PkgInclude:
-  - '*'
+jlindholm/jasmine-example:
 
-PreRelease:
-  - npm install
-  - npm test
+manifest:
+    PkgInclude:
+    - '*'
 
-PreInstall:
-  - sudo apt-get update
-  - sudo apt-get install nodejs -y
-  - sudo apt-get install npm -y
+    PreRelease:
+    - npm install
+    - npm test
 
-Exec:
-  - /usr/bin/nodejs app.js
+    PreInstall:
+    - sudo apt-get update
+    - sudo apt-get install nodejs -y
+    - sudo apt-get install npm -y
+
+    Exec:
+    - /usr/bin/nodejs app.js
