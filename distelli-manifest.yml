@@ -1,17 +1,21 @@
-jlindholm/jasmine-example:
+jlindholm/jasmine:
 
-manifest:
-    PkgInclude:
+  PkgInclude:
     - '*'
 
-    PreRelease:
+  Build:
+    - echo "Begin Build"
     - npm install
     - npm test
 
-    PreInstall:
-    - sudo apt-get update
-    - sudo apt-get install nodejs -y
-    - sudo apt-get install npm -y
+  PreInstall:
+    - echo "Begin PreInstall"
+    - sudo apt-get -y update
+    - sudo apt-get -y install nodejs
+    - sudo apt-get -y install npm
 
-    Exec:
+  PostInstall:
+    - echo "Begin PostInstall"
+
+  Exec:
     - /usr/bin/nodejs app.js
